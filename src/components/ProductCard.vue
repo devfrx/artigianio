@@ -144,7 +144,7 @@ defineProps<Props>()
 
 .product-card:hover .product-material {
   background: var(--color-secondary);
-  color: var(--vt-c-text-light-2);
+  color: var(--vt-c-text-light-1);
 }
 
 .product-price {
