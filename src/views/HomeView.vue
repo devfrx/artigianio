@@ -35,7 +35,7 @@ onMounted(() => {
 
 // Dati statici... (resto uguale)
 const heroData = {
-  title: 'ARTIGIAN(IO)',
+  title: 'Artigian(i)o',
   slogan: 'Fatto a mano non vuol dire fatto a meno',
   description:
     'Creazioni uniche realizzate interamente a mano, con tecniche tradizionali. Ogni pezzo racconta una storia di dedizione e maestria.',

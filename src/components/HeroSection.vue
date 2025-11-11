@@ -14,7 +14,7 @@
         </div>
 
         <h1 class="hero-title">
-          <span class="title-main">{{ title }}</span>
+          <span class="title-main title-font">{{ title }}</span>
           <!-- <span class="title-accent">Dal 2000</span> -->
         </h1>
 
@@ -232,7 +232,7 @@ const scrollToAbout = () => {
 }
 
 .title-main {
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-8xl);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-heading);
   line-height: var(--line-height-tight);

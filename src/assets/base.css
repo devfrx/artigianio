@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Satisfy&display=swap');
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -133,6 +134,8 @@
   --font-size-5xl: 3rem; /* 48px */
   --font-size-6xl: 3.75rem; /* 60px */
   --font-size-7xl: 4.5rem; /* 72px */
+  --font-size-8xl: 6rem; /* 96px */
+  --font-size-9xl: 8rem; /* 128px */
 
   /* Font Weights */
   --font-weight-light: 300;
@@ -324,6 +327,10 @@ body {
 }
 
 /* Typography utilities */
+
+.title-font {
+  font-family: 'Lobster Two', cursive;
+}
 .text-xs {
   font-size: var(--font-size-xs);
 }
