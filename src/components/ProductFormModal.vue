@@ -158,7 +158,7 @@
             <Icon icon="ph:x-bold" />
             Annulla
           </button>
-          <button type="submit" :disabled="uploading || imageError" class="btn-primary">
+          <button type="submit" :disabled="!!(uploading || imageError)" class="btn-primary">
             <Icon v-if="uploading" icon="ph:spinner" class="spinning" />
             <Icon v-else icon="ph:check-bold" />
             {{ uploading ? 'Creando...' : editingProduct ? 'Perfeziona' : 'Crea Capolavoro' }}

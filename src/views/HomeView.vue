@@ -45,7 +45,7 @@ const heroData = {
 const artisan = {
   name: 'Vincenzo Como',
   description:
-    'Si effettuano piccoli e medi lavori di falegnameria su misura, ristrutturazione di artigianato in legno personalizzate in legno. Ogni pezzo è realizzato con passione e attenzione ai dettagli, utilizzando tecniche tradizionali tramandate da generazioni.',
+    'Si effettuano piccoli e medi lavori di falegnameria su misura, ristrutturazione di artigianato in legno. Ogni pezzo è realizzato con passione e attenzione ai dettagli, utilizzando tecniche tradizionali.',
   photo: '/images/artisan-photo.jpg',
   skills: ['Restauro', 'Finitura naturale', 'Lavorazione su misura', 'Creatività'],
   experience: 25,

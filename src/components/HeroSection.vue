@@ -53,15 +53,15 @@
         <div class="trust-indicators">
           <div class="trust-item">
             <Icon icon="ph:trophy-fill" class="trust-icon" />
-            <span class="trust-text">Qualità Certificata</span>
+            <span class="trust-text">Qualità</span>
           </div>
           <div class="trust-item">
             <Icon icon="ph:leaf-fill" class="trust-icon" />
             <span class="trust-text">Legno Sostenibile</span>
           </div>
           <div class="trust-item">
-            <Icon icon="ph:lightning-fill" class="trust-icon" />
-            <span class="trust-text">Consegna Rapida</span>
+            <Icon icon="ph:handshake-fill" class="trust-icon" />
+            <span class="trust-text">Fiducia</span>
           </div>
         </div>
       </div>
