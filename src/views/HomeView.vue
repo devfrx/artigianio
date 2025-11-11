@@ -53,7 +53,7 @@ const artisan = {
 
 const contact = {
   email: 'rollbar@live.it',
-  phone: '+39 346 6600 424',
+  phone: '+39 346 660 0424',
   address: "Via dell'Artigianato 123, Milano",
   social: {
     // Instagram: 'https://instagram.com/artigianato_legno',
