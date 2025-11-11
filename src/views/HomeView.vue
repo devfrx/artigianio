@@ -39,7 +39,7 @@ const heroData = {
   slogan: 'Fatto a mano non vuol dire fatto a meno',
   description:
     'Creazioni uniche realizzate interamente a mano, con tecniche tradizionali. Ogni pezzo racconta una storia di dedizione e maestria.',
-  fallbackImage: 'https://i.ibb.co/bjx0wzyC/plantsshelves.png',
+  fallbackImage: 'https://i.ibb.co/N6VLsTd8/plantsshelve2.jpg',
 }
 
 const artisan = {
