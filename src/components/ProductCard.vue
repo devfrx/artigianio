@@ -1,9 +1,12 @@
 <template>
   <div class="product-card">
-    <div class="product-image">
+    <div class="product-image" @click="openImageModal">
       <img :src="product.image_url" :alt="product.name" />
       <div class="image-overlay">
-        <!-- <span class="overlay-text">Visualizza dettagli</span> -->
+        <div class="overlay-content">
+          <Icon icon="ph:magnifying-glass-plus-bold" class="overlay-icon" />
+          <span class="overlay-text">Visualizza</span>
+        </div>
       </div>
     </div>
     <div class="product-info">
@@ -14,18 +17,49 @@
         <span class="product-price" v-if="product.price">{{ product.price }}</span>
       </div>
     </div>
+
+    <!-- Image Modal -->
+    <ImageModal
+      :is-visible="showImageModal"
+      :image-url="product.image_url"
+      :image-alt="product.name"
+      :image-title="product.name"
+      :image-description="product.description"
+      :image-material="product.material"
+      :image-price="product.price"
+      @close="closeImageModal"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-// Usa il tipo Product dal supabase invece di ridefinirlo
+import { ref } from 'vue'
+import { Icon } from '@iconify/vue'
 import type { Product } from '@/lib/supabase'
+import ImageModal from './ImageModal.vue'
 
 interface Props {
   product: Product
 }
 
+interface Emits {
+  (e: 'open-gallery'): void
+}
+
 defineProps<Props>()
+const emit = defineEmits<Emits>()
+
+const showImageModal = ref(false)
+
+const openImageModal = () => {
+  showImageModal.value = true
+  // Opzionale: emetti anche l'evento per la galleria
+  // emit('open-gallery')
+}
+
+const closeImageModal = () => {
+  showImageModal.value = false
+}
 </script>
 
 <style scoped>
@@ -35,7 +69,6 @@ defineProps<Props>()
   overflow: hidden;
   box-shadow: var(--shadow-base);
   transition: var(--transition-all);
-  cursor: pointer;
   border: 1px solid var(--color-border);
   position: relative;
 }
@@ -50,7 +83,7 @@ defineProps<Props>()
   height: 280px;
   overflow: hidden;
   position: relative;
-  /* Mantieni il radius coerente per l'immagine */
+  cursor: pointer;
   border-radius: var(--radius-card-outer) var(--radius-card-outer) 0 0;
 }
 
@@ -80,18 +113,31 @@ defineProps<Props>()
 }
 
 .product-card:hover .image-overlay {
-  opacity: 0.2;
+  opacity: 1;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: white;
+  text-align: center;
+}
+
+.overlay-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-1);
 }
 
 .overlay-text {
-  color: white;
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  text-align: center;
   padding: var(--space-2) var(--space-4);
   border: 2px solid white;
   border-radius: var(--radius-full);
   backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .product-info {
@@ -133,7 +179,7 @@ defineProps<Props>()
 
 .product-material {
   background: var(--color-background-mute);
-  color: var(--vt-c-text-dark-1);
+  color: var(--color-text);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
@@ -144,7 +190,7 @@ defineProps<Props>()
 
 .product-card:hover .product-material {
   background: var(--color-secondary);
-  color: var(--vt-c-text-light-1);
+  color: white;
 }
 
 .product-price {
@@ -180,6 +226,10 @@ defineProps<Props>()
   .product-details {
     margin-top: var(--space-3);
     padding-top: var(--space-2);
+  }
+
+  .overlay-icon {
+    font-size: var(--font-size-2xl);
   }
 
   .overlay-text {
