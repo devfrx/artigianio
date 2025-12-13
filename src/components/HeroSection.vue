@@ -237,10 +237,10 @@ const scrollToAbout = () => {
   color: var(--color-heading);
   line-height: var(--line-height-tight);
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--vt-c-text-dark-1) 0%, var(--vt-c-text-dark-2) 100%);
+  /* background: linear-gradient(135deg, var(--vt-c-text-dark-1) 0%, var(--vt-c-text-dark-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; */
 }
 
 .title-accent {
@@ -415,7 +415,7 @@ const scrollToAbout = () => {
 .hero-image {
   width: 100%;
   height: 800px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius-frame-inner);
   transition: var(--transition-transform);
 }
@@ -557,7 +557,8 @@ const scrollToAbout = () => {
   }
 
   .hero-visual {
-    order: -1;
+    display: none;
+    /* order: -1; */
   }
 
   .title-main {
