@@ -11,6 +11,11 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/galleria',
+      name: 'gallery',
+      component: () => import('../views/GalleryView.vue'),
+    },
+    {
       path: '/admin/login',
       name: 'admin-login',
       component: () => import('../views/AdminLoginView.vue'),

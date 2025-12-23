@@ -9,7 +9,7 @@ export const useProductsStore = defineStore('products', () => {
 
   // Computed per prodotti specifici con debug
   const featuredProducts = computed(() => {
-    const featured = products.value.filter((p) => p.is_featured).slice(0, 4)
+    const featured = products.value.filter((p) => p.is_featured).slice(0, 6)
     console.log('🎯 Featured products:', featured.length, featured)
     return featured
   })
@@ -18,6 +18,11 @@ export const useProductsStore = defineStore('products', () => {
     const hero = products.value.find((p) => p.is_hero)
     console.log('🦸 Hero product:', hero)
     return hero
+  })
+
+  // Tutti i prodotti per la galleria completa
+  const allProducts = computed(() => {
+    return products.value
   })
 
   // Fetch tutti i prodotti
@@ -152,6 +157,7 @@ export const useProductsStore = defineStore('products', () => {
     error,
     featuredProducts,
     heroProduct,
+    allProducts,
     fetchProducts,
     addProduct,
     updateProduct,

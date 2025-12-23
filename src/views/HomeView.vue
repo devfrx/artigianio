@@ -7,7 +7,7 @@
       :hero-image="heroProduct?.image_url || heroData.fallbackImage"
     />
 
-    <ProductGallery :products="featuredProducts" />
+    <ProductGallery :products="featuredProducts" :show-view-all-button="true" />
 
     <AboutSection :artisan="artisan" />
 

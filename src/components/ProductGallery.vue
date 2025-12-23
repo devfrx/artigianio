@@ -31,6 +31,14 @@
           @open-gallery="openGallery(index)"
         />
       </div>
+
+      <div v-if="showViewAllButton" class="view-all-wrapper">
+        <router-link to="/galleria" class="view-all-button">
+          <Icon icon="ph:images-square-fill" class="btn-icon" />
+          <span>Vedi Tutta la Galleria</span>
+          <Icon icon="ph:arrow-right-bold" class="btn-arrow" />
+        </router-link>
+      </div>
     </div>
 
     <!-- Gallery Modal -->
@@ -60,9 +68,12 @@ import type { Product } from '@/lib/supabase'
 
 interface Props {
   products: Product[]
+  showViewAllButton?: boolean
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  showViewAllButton: false
+})
 
 const showGallery = ref(false)
 const currentIndex = ref(0)
@@ -218,6 +229,46 @@ const nextImage = () => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--space-8);
+}
+
+.view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-all);
+  box-shadow: var(--shadow-wood);
+}
+
+.view-all-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-wood-lg);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+}
+
+.view-all-button .btn-icon {
+  font-size: var(--font-size-xl);
+}
+
+.view-all-button .btn-arrow {
+  font-size: var(--font-size-base);
+  transition: var(--transition-transform);
+}
+
+.view-all-button:hover .btn-arrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
