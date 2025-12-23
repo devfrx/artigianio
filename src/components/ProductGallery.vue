@@ -72,7 +72,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  showViewAllButton: false
+  showViewAllButton: false,
 })
 
 const showGallery = ref(false)
